@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#073b66">
+<title>Summer Mash-Up! — Photo &amp; Video Submissions</title>
+<style>
+:root{--navy:#073b66;--blue:#0878c9;--cyan:#48d9e8;--ink:#172b3a;--muted:#536675;--paper:#fff;--bg:#f2f8fc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.hero{background:linear-gradient(125deg,#062b50,#0878c9 72%,#19b9d2);color:#fff;padding:42px 20px 52px}
+.hero-inner,.wrap{max-width:850px;margin:auto}.kicker{font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#bff8ff}
+h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.06;margin:.5rem 0 1rem;letter-spacing:-.035em}.hero p{max-width:650px;font-size:1.08rem;margin:0;color:#effaff}
+.pill{display:inline-block;background:#fff;color:var(--navy);border-radius:999px;padding:6px 12px;font-size:.82rem;font-weight:750;margin-top:22px}
+main{padding:0 16px 42px}.card{max-width:850px;margin:-24px auto 0;background:var(--paper);border-radius:18px;box-shadow:0 12px 35px #0a345314;padding:clamp(20px,4vw,34px)}
+h2{font-size:1.35rem;margin:0 0 8px;color:var(--navy)}.intro{margin-top:0;color:var(--muted)}
+.notice{border-left:4px solid #e8a02c;background:#fff8e9;padding:13px 15px;border-radius:6px;margin:22px 0;color:#65440d}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{margin:17px 0}.field.full{grid-column:1/-1}
+label{display:block;font-weight:700;margin-bottom:7px}input[type=text],input[type=email],select,textarea{width:100%;border:1px solid #bdccd9;border-radius:9px;padding:12px 13px;font:inherit;background:white;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:3px solid #48d9e855;border-color:var(--blue)}input[type=file]{width:100%;padding:12px;border:1px dashed #91a9bb;border-radius:9px;background:#f8fbfd}
+small{display:block;color:var(--muted);font-size:.9rem;margin-top:6px}
+.check{display:flex;gap:11px;align-items:flex-start;margin:15px 0}.check input{margin-top:5px;flex-shrink:0;width:18px;height:18px}.check label{font-weight:500;margin:0}
+button{border:0;border-radius:10px;padding:14px 20px;background:var(--blue);color:white;font:inherit;font-weight:800;cursor:pointer;width:100%;margin-top:10px}button:hover{background:#075fa0}
+.status{display:none;margin-top:16px;padding:14px;border-radius:10px;background:#eaf5ff;color:#073b66}
+footer{max-width:850px;margin:24px auto 0;padding:0 8px;color:var(--muted);font-size:.88rem}
+@media(max-width:620px){.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.hero{padding-top:32px}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="hero-inner">
+<div class="kicker">Your moment. Your mash-up.</div>
+<h1>Summer Mash-Up!<br>Photo &amp; Video Submissions</h1>
+<p>Got something fun you'd like to share? This page is a draft for collecting photo and video submissions for a Summer Mash-Up fan project.</p>
+<span class="pill">Submission form preview</span>
+</div></header>
+<main><section class="card">
+<h2>Send us your stuff!</h2>
+<p class="intro">Fill in the details below and choose the photos or videos you'd like to share.</p>
+<div class="notice"><strong>Preview only:</strong> this form is not connected to a secure upload service yet. Nothing you enter or select is sent or stored by this page. Please don't enter real personal details or select private photos/videos until the form is fully configured.</div>
+<form id="submission-form">
+<div class="grid">
+<div class="field"><label for="first-name">First name or nickname</label><input id="first-name" name="first-name" type="text" autocomplete="off" placeholder="What should we call you?"></div>
+<div class="field"><label for="age-group">Age group</label><select id="age-group" name="age-group"><option value="">Choose an age group</option><option>Under 13</option><option>13–15</option><option>16–17</option><option>18 or over</option></select></div>
+<div class="field full"><label for="email">Parent/guardian email (if applicable)</label><input id="email" name="email" type="email" autocomplete="off" placeholder="Leave blank in this preview"><small>Do not enter an actual email address in this preview.</small></div>
+<div class="field full"><label for="description">Tell us about your photo or video (optional)</label><textarea id="description" name="description" rows="3" placeholder="A short description — please don't include private information."></textarea></div>
+<div class="field full"><label for="files">Choose photos or videos</label><input id="files" name="files" type="file" accept="image/*,video/*" multiple><small>Preview only. File selection stays in your browser and will not upload. Final file limits will be set when secure storage is configured.</small></div>
+</div>
+<div class="check"><input id="permission" type="checkbox" name="permission"><label for="permission">I confirm that I have permission to share these files and that everyone shown has agreed to their use.</label></div>
+<div class="check"><input id="guardian" type="checkbox" name="guardian"><label for="guardian">If I am under 18, my parent or guardian has reviewed this submission and agrees to the proposed use of the files.</label></div>
+<div class="check"><input id="privacy" type="checkbox" name="privacy"><label for="privacy">I understand that the final form must provide a clear privacy notice explaining who receives the files, how they are used, and when they are deleted.</label></div>
+<button type="submit">Preview submission</button>
+<div class="status" id="status" role="status" aria-live="polite"></div>
+</form></section>
+<footer><p><strong>Important:</strong> This is an independent fan-project draft and is not an official BBC website or service. Do not send real submissions until a secure upload service, access controls, privacy notice, retention period, and parental-consent process have been set up.</p></footer>
+</main>
+<script>
+document.getElementById('submission-form').addEventListener('submit',function(event){
+event.preventDefault();const status=document.getElementById('status');status.style.display='block';
+status.textContent='Preview only — no information or files have been sent. The secure upload service has not been connected yet.';
+status.scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+</script>
+</body></html>
